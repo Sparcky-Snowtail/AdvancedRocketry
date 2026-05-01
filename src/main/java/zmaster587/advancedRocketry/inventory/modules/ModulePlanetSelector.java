@@ -20,7 +20,7 @@ import org.lwjgl.opengl.GL11;
 import zmaster587.advancedRocketry.api.ARConfiguration;
 import zmaster587.advancedRocketry.api.Constants;
 import zmaster587.advancedRocketry.api.dimension.IDimensionProperties;
-import zmaster587.advancedRocketry.api.dimension.solar.IGalaxy;
+import zmaster587.advancedRocketry.api.dimension.solar.IUniverse;
 import zmaster587.advancedRocketry.api.dimension.solar.StellarBody;
 import zmaster587.advancedRocketry.dimension.DimensionManager;
 import zmaster587.advancedRocketry.dimension.DimensionProperties;
@@ -189,7 +189,7 @@ public class ModulePlanetSelector extends ModuleContainerPan implements IButtonI
     }
 
     @SideOnly(Side.CLIENT)
-    private void renderGalaxyMap(IGalaxy galaxy, int posX, int posY, float distanceZoomMultiplier, float planetSizeMultiplier) {
+    private void renderGalaxyMap(IUniverse galaxy, int posX, int posY, float distanceZoomMultiplier, float planetSizeMultiplier) {
         Collection<StellarBody> stars = galaxy.getStars();
 
         for (StellarBody star : stars) {

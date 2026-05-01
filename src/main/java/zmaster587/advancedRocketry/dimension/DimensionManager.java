@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import zmaster587.advancedRocketry.AdvancedRocketry;
 import zmaster587.advancedRocketry.api.*;
 import zmaster587.advancedRocketry.api.dimension.IDimensionProperties;
-import zmaster587.advancedRocketry.api.dimension.solar.IGalaxy;
+import zmaster587.advancedRocketry.api.dimension.solar.IUniverse;
 import zmaster587.advancedRocketry.api.dimension.solar.StellarBody;
 import zmaster587.advancedRocketry.api.satellite.SatelliteBase;
 import zmaster587.advancedRocketry.api.stations.ISpaceObject;
@@ -47,7 +47,7 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static zmaster587.advancedRocketry.dimension.DimensionProperties.proxylists;
 
 
-public class DimensionManager implements IGalaxy {
+public class DimensionManager implements IUniverse {
 
     public static final String workingPath = "advRocketry";
     public static final String tempFile = "/temp.dat";

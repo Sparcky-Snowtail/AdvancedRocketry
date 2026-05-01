@@ -5,7 +5,7 @@ import zmaster587.advancedRocketry.api.satellite.SatelliteBase;
 
 import java.util.Collection;
 
-public interface IGalaxy {
+public interface IUniverse {
     Collection<StellarBody> getStars();
 
     /**

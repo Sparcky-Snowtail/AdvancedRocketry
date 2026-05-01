@@ -401,7 +401,22 @@ public class SpaceStationObject implements ISpaceObject, IPlanetDefiner {
             PacketHandler.sendToAll(new PacketStationUpdate(this, Type.FUEL_UPDATE));
         return amt;
     }
+    /**public int addFuel(int amt) {
+        if (amt <= 0)
+            return 0;
 
+        int old = fuelAmount;
+
+        // RF insertion (cap at max RF)
+        fuelAmount = Math.min(fuelAmount + amt, MAX_FUEL);
+
+        int accepted = fuelAmount - old;
+
+        if (FMLCommonHandler.instance().getSide().isServer())
+            PacketHandler.sendToAll(new PacketStationUpdate(this, Type.FUEL_UPDATE));
+
+        return accepted;
+    }*/
     /**
      * Used the amount of fuel passed
      *
@@ -418,6 +433,19 @@ public class SpaceStationObject implements ISpaceObject, IPlanetDefiner {
             PacketHandler.sendToAll(new PacketStationUpdate(this, Type.FUEL_UPDATE));
         return amt;
     }
+    /**public int useFuel(int amt) {
+        if (amt <= 0)
+            return 0;
+
+        int used = Math.min(amt, fuelAmount);
+
+        fuelAmount -= used;
+
+        if (FMLCommonHandler.instance().getSide().isServer())
+            PacketHandler.sendToAll(new PacketStationUpdate(this, Type.FUEL_UPDATE));
+
+        return used;
+    }*/
 
     public void setLandingPadAutoLandStatus(BlockPos pos, boolean status) {
         setLandingPadAutoLandStatus(pos.getX(), pos.getZ(), status);
